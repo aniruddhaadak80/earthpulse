@@ -1,0 +1,21 @@
+{
+  "name": "earthpulse",
+  "version": "0.0.0",
+  "scripts": {
+    "dev:server": "node server.js",
+    "dev:client": "vite",
+    "dev": "npm run dev:server & npm run dev:client",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "axios": "^1.15.0",
+    "cors": "^2.8.6",
+    "d3-geo": "^3.1.1",
+    "date-fns": "^4.1.0",
+    "express": "^5.2.1",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.8"
+  }
+}

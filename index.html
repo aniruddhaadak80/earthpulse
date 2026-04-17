@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EarthPulse - Global Crisis Monitor</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- App Container -->
+    <div id="app">
+      <!-- High Tech Map View -->
+      <div id="map-container">
+        <canvas id="map-canvas"></canvas>
+      </div>
+
+      <!-- App Header -->
+      <header class="glass-panel">
+        <div class="logo">
+          <span class="pulse-dot"></span> EarthPulse
+        </div>
+        <div class="header-stats">
+          <div class="stat">
+            <span class="label">Live Events</span>
+            <span id="stat-total" class="value">--</span>
+          </div>
+          <div class="stat">
+            <span class="label">Tracking</span>
+            <span class="value">NASA EONET Core</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar with list -->
+      <aside class="glass-panel sidebar" id="event-sidebar">
+        <div class="sidebar-header">
+          <h2>Active Threats</h2>
+          <div class="filters">
+            <button class="filter-btn active" data-cat="all">All</button>
+            <button class="filter-btn" data-cat="Wildfires">Fires</button>
+            <button class="filter-btn" data-cat="Severe Storms">Storms</button>
+            <button class="filter-btn" data-cat="Volcanoes">Volcanoes</button>
+          </div>
+        </div>
+        
+        <div class="event-list" id="event-list">
+          <!-- Populated by JS -->
+          <div class="loading-state">Syncing with NASA Uplink...</div>
+        </div>
+      </aside>
+
+      <!-- Connection Overlay -->
+      <div id="connecting-overlay" class="overlay">
+        <div class="loader">
+          <div class="spinner"></div>
+          <h2>Establishing Satellite Uplink...</h2>
+          <p>Fetching near real-time global event data from NASA EONET v3</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- We must import topojson from a CDN since D3 geo path likes to work with it -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
