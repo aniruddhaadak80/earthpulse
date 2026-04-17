@@ -1,3 +1,5 @@
+import { fetchNasaEvents } from './src/js/nasaService.js';
+
 // EarthPulse NASA Backend fetch and D3 Geo Engine mapping
 
 let globalEventsData = [];
@@ -45,10 +47,8 @@ async function init() {
     const topoData = await worldRes.json();
     worldGeoData = topojson.feature(topoData, topoData.objects.countries);
 
-    // 2. Fetch processed event data from our backend
-    // Since we setup the Vite proxy, /api/events will route to localhost:3001
-    const backendRes = await fetch('/api/events');
-    const pulseData = await backendRes.json();
+    // 2. Fetch processed event data strictly using frontend logics
+    const pulseData = await fetchNasaEvents();
 
     if (pulseData.status === 'success') {
       globalEventsData = pulseData.data;

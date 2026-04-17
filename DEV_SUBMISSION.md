@@ -20,7 +20,10 @@ I built **EarthPulse** — a full-stack, high-performance monitoring dashboard t
 
 The frontend renders a highly stylized, animated UI mapping live threats (Wildfires, Volcanoes, Severe Storms, and Icebergs). The map interacts directly with a sidebar that tracks real-time days-active duration and calculates severity algorithms!
 
-*(You can experience the fluid animations by pulling down the code below!)*
+🚀 **[Experience EarthPulse Live](https://aniruddhaadak80.github.io/earthpulse/)**
+
+![EarthPulse Interactive Map View](https://raw.githubusercontent.com/aniruddhaadak80/earthpulse/main/src/assets/hero.png)
+*(Click around the globe to explore the custom CSS pulsing markers and the data normalization sidebar algorithms in real-time.)*
 
 ---
 
