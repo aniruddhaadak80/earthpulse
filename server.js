@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const eventsHandler = require('./api/events');
+import express from 'express';
+import cors from 'cors';
+import eventsHandler from './api/events.js';
 
 const app = express();
 app.use(cors());
